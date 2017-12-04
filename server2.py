@@ -8,6 +8,7 @@ import pickle
 from scipy import misc
 from preprocessing import preprocess
 app.config['SECRET_KEY'] = 'mysecret'
+app.config["CACHE_TYPE"] = "null"
 socketio = SocketIO(app)
 import layout_gen
 # class_keys = ['TextView','ImageView','Header','EditText','Button']
@@ -35,6 +36,9 @@ from yolo_classifier import YoloClassifier
 from scipy import misc
 import utils
 import shutil
+
+
+
 
 def normalizing(X):
     return X/255
