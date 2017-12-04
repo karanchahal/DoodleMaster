@@ -1,0 +1,241 @@
+
+body {
+  font-family: Arial, sans-serif;
+}
+.header {
+  display: flex; /* or inline-flex */
+  height: 6vh; 
+  background-color:white;
+}
+
+.logo{
+  margin: auto;  /* Magic! */
+  margin-top:6px;
+  height: 3vh;
+  width: 180px;
+}
+
+.heading {
+  left:0px;
+  display:flex;
+  height: 6vh; 
+  background-color:#3e5057;
+  
+}
+
+.page-type {
+  margin: auto;
+  font-size: 3vh;
+  font-weight: 200;
+  color: white;
+}
+
+.account-form {
+  display: flex;
+  margin-top: 1vh;
+  height:80vh;
+  flex-direction: column;
+
+  justify-content: space-around;
+}
+
+
+input {
+  
+  color:#3a3c3a;
+   width: 390px;
+   height: 10vh; 
+   font-size: xx-large;
+   border: black;
+   border-style: inset;
+   border-width: thin;
+   
+}
+
+.button {
+  background-color: red;
+  
+  color: white;
+  border:none;
+  width: 390px;
+  height: 10vh; 
+  font-size: xx-large;
+  text-align: center;
+}
+.headings {
+  width: 390px;
+  
+}
+
+.sub-heading-1 {
+
+  text-align: left;
+  font-size: 2em;
+  color:#333;
+}
+
+
+.sub-heading-2 {
+  margin-top: 1vh;
+  font-size: 1em;
+  text-align: left;
+  color:#3a3c3a;
+}
+hr {
+  margin-top: 2vh;
+  width:390px;
+  height:1px;
+}
+
+
+.loadingbar {
+  height:5px;
+  width:60vw;
+  background-color: red; 
+}
+.container {
+  display: flex;
+  height: 100%;
+  margin-top: 1vh;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+
+.main-heading {
+  margin-top:20px;
+  width:90vw;
+  font-size: 2em;
+  text-align: left;
+}
+
+
+.sub-heading {
+  margin-top:20px;
+  width:90vw;
+  font-size: 1.25em;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.accounts {
+  display: flex;
+  flex-direction: row;
+  margin-top:10px;
+  width: 90vw;
+  height: 15vh;
+  border:1px solid black;
+  align-items: stretch;
+}
+
+.account-checkbox {
+  margin-left: 0px;
+  width:5%;
+}
+
+
+.account-description{
+  width:95%;
+  margin-left:2%;
+}
+
+.account-type {
+  margin-top:2%;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.account-number {
+  font-size: 1em;
+}
+
+.account-balance-header{
+  margin-top:2%;
+  font-size: 0.8em;
+}
+
+.account-balance {
+  font-size: 1.0em;
+}
+
+.red-button {
+  margin-top: 20px;
+  border:none;
+  width: 90vw;
+  height: 10vh; 
+  background-color: red;
+  color: white;
+  font-size: 2em;
+  text-align: center;
+}
+
+.white-button {
+  margin-top: 20px;
+  border:none;
+  width: 90vw;
+  height: 10vh; 
+  background-color: white;
+  color:#3e5057;
+  font-size: 2em;
+  text-align: center;
+}
+
+.checkbox {
+  width:90vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+}
+
+.radiofield {
+  margin-top:2vh;
+  width:90vw;
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+
+.pin {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90vw;
+}
+
+.pin-field {
+
+   color:#3a3c3a;
+   width: 15vw;
+   height: 8vh; 
+   font-size: xx-large;
+   border: black;
+   border-style: inset;
+   border-width: thin;
+   text-align: center;
+   margin-right: 3vw;
+   
+}
+
+.terms-conditions {
+  margin-top:2vh;
+  overflow-y: auto;
+  width: 90vw;
+  height:45vh;
+}
+
+.chat-bubble {
+  display: flex;
+  margin-top: 20px;
+  border:none;
+  width: 90vw;
+  height: 8vh; 
+  background-color: rgba(199, 199, 199, 0.47);
+  color:black;
+  font-size: 1.25em;
+  font-style: italic;
+  align-items: center;
+  justify-content: center;
+}
