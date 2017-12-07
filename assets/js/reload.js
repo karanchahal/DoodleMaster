@@ -1,10 +1,5 @@
-// let i = 0
-// while(true) {
+function refresh() {
+    window.location.reload(true);
+}
 
-// if(i == 5000000) {
-//     window.location.reload(false)
-//     i = 0;
-// }
-
-//     i += 1
-// }
+setInterval(refresh, 1000);

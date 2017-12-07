@@ -2,10 +2,11 @@ from scipy import misc
 import util
 from xml.etree import ElementTree as ET
 from xml.dom import minidom
+from bs4 import BeautifulSoup as bs
 elements = []
 h = 0
 w = 0
-main_html = '<!DOCTYPE html><html lang="en"><head><title>DevTips Starter Kit</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="shortcut icon" href="assets/img/favicons/favicon.ico"><script src="assets/js/reload.js"></script><link rel="stylesheet" href="main.css" /></head><body>'
+main_html = '<!DOCTYPE html><html lang="en"><head><title>Output</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="shortcut icon" href="assets/img/favicons/favicon.ico"><script src="assets/js/reload.js"></script><link rel="stylesheet" href="main.css" /></head><body>'
 def init(element_type,coords,W,H,id_):
   
     x_min = coords[0]
@@ -22,7 +23,7 @@ def init(element_type,coords,W,H,id_):
     elements.append([element_type,x_percent,y_percent,w_percent,h_percent,id_])
 
 def Button(i,margin_top,x,y,w,h,id):
-    html = '<button class="red-button" style="margin-top:'  + str(margin_top)+ 'vh"> Insert Text Here </button>'
+    html = '<button class="red-button" style="margin-top:'  + str(margin_top)+ 'vh">Button Label</button>'
     return html
 
 def ButtonXml(i,margin_top,x,y,w,h,id):
@@ -32,7 +33,7 @@ def ButtonXml(i,margin_top,x,y,w,h,id):
                     "android:layout_marginTop":str(margin_top*7.1) + "dp",
                     "android:textSize":"30sp",
                     "android:background":"@color/primary",
-                    "android:text":"Log on",
+                    "android:text":"Button Label",
                     "android:id":"@+id/" + id,
                     "android:layout_marginLeft":"8dp",
                     "android:layout_marginRight":"8dp",
@@ -41,47 +42,64 @@ def ButtonXml(i,margin_top,x,y,w,h,id):
                     "android:textColor":"#FFF"})
     return Button_Layout
 
-
-
 def TextView(i,margin_top,x,y,w,h,id):
 
-    html = "<div class='terms-conditions' style='margin-top:" + str(margin_top)+ "vh;height:" + str(h)+ "vh'> <div class='main-heading'>Terms and Conditions</div> <h2>The Blah</h2> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. <h2>The Blah</h2> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. <h2>The Blah</h2> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </div>"
-    return html
+    print('Height is ' + str(h))
+    html1 = '<div class="main-heading" style="margin-top:' + str(margin_top)+ 'vh;">Sub Heading</div>'
+    
+    html2 = '<div class="sub-heading" style="margin-top:' + str(margin_top)+ 'vh;"> Sub Sub Heading . Used for explaining the topic in detail</div>'
+       
+    html = '<div class="main-heading" style="font-size:3em;text-align:center;margin-top:' + str(margin_top)+ 'vh;">Heading</div>'
+    if(h > 27):
+        return html
+    elif(h > 11):
+        return html1
+    else:
+        return html2
 
 def TextViewXml(i,margin_top,x,y,w,h,id):
-    TextView_Layout = ET.Element("LinearLayout", {"android:layout_width": "match_parent",
+   
+    LargeText = ET.Element("TextView", {"android:layout_width": "match_parent",
                                 "android:layout_height": "wrap_content",
-                                "android:paddingLeft": "20dp",
-                                "android:paddingRight":"20dp",
-                                "android:orientation":"vertical",
-                                "android:layout_marginTop":str(margin_top*7.1) + "dp"})
+                                "android:paddingTop": "5dp",
+                                "android:paddingBottom":"5dp",
+                                "android:id":"id",
+                                "android:text":"Heading",
+                                "android:layout_marginTop":str(margin_top*7.1) + "dp",
+                                "android:gravity":"center",
+                                "android:textColor":"#000",
+                                "android:textSize":"50sp"})
 
-    title = ET.Element("TextView", {"android:layout_width": "match_parent",
+
+    MediumText = ET.Element("TextView", {"android:layout_width": "match_parent",
                                 "android:layout_height": "wrap_content",
-                                "android:text": "@string/tv_title",
-                                "android:textSize":"25sp",
-                                "android:textColor":"#000"})
+                                "android:paddingTop": "5dp",
+                                "android:paddingBottom":"5dp",
+                                "android:id":"id",
+                                "android:text":"Sub Heading",
+                                "android:layout_marginTop":str(margin_top*7.1) + "dp",
+                                "android:textColor":"#000",
+                                "android:textSize":"30sp"})
 
-    author = ET.Element("TextView", {"android:layout_width": "match_parent",
+    SmallText = ET.Element("TextView", {"android:layout_width": "match_parent",
                                 "android:layout_height": "wrap_content",
-                                "android:text": "@string/author",
-                                "android:textSize":"18sp"})
+                                "android:paddingTop": "5dp",
+                                "android:paddingBottom":"5dp",
+                                "android:id":"vertical",
+                                "android:text":"Sub Sub Heading. Used for explaining the text in detail.",
+                                "android:layout_marginTop":str(margin_top*7.1) + "dp",
+                                "android:style":"italic"})
 
-    content = ET.Element("TextView", {"android:layout_width": "match_parent",
-                                "android:layout_height": "wrap_content",
-                                "android:text": "@string/content",
-                                "android:textSize":"18sp",
-                                "android:layout_marginTop":"5dp"})
+    if(h > 27):
+        return LargeText
+    elif(h > 11):
+        return MediumText
+    else:
+        return SmallText
 
-    # appending each data to textView
-    TextView_Layout.append(title)
-    TextView_Layout.append(author)
-    TextView_Layout.append(content)
-
-    return TextView_Layout
 
 def EditText(i,margin_top,x,y,w,h,id):
-    html = '<div style="fontSize: "1.5em";margin-top' + str(margin_top)+ 'vh"> class="sub-heading">Memorable Answer</div> <input type="password" name="answer" style={{width:"90vw"}}/>'
+    html = '<div style="fontSize: "1.5em";margin-top' + str(margin_top)+ 'vh" class="sub-heading">Placeholder</div> <input type="password" name="answer" style="width:90vw;"/>'
     return html
 
 def EditTextXml(i,margin_top,x,y,w,h,id):
@@ -96,11 +114,12 @@ def EditTextXml(i,margin_top,x,y,w,h,id):
             "android:layout_marginLeft":"8dp",
             "android:layout_marginRight":"8dp",
             "android:layout_marginTop":str(margin_top*7.1) + "dp",
-            "android:background":"@drawable/sign_up_cell_border"})
+            "android:background":"@drawable/sign_up_cell_border",
+            "android:hint":"Placeholdera"})
     return EditText_Layout
 
 def Header(i,margin_top,x,y,w,h,id):
-    html = '<div class="header"> <div class="logo"><img src="assets/img/hsbc-logo.svg"></div> </div> <div class="heading"> <div class="page-type"> ACCOUNT LINKING </div> </div> <div class="loadingbar"></div> <div class="container">'
+    html = '<div class="header"> <div class="logo"><img src="assets/img/hsbc-logo.svg"></div> </div> <div class="heading"> <div class="page-type"> HEADER </div> </div> <div class="loadingbar"></div> <div class="container">'
     return html
 
 
@@ -203,14 +222,12 @@ def build():
             root = util.appendElementToXML(xmlFilePath,10,root,xml)
 
         htmlfinal = htmlfinal + html
-        
+    
     roughString = ET.tostring(root, 'utf-8')
-    util.writeToFile('./output.html',htmlfinal)
+
+    soup=bs(htmlfinal)                
+    prettyHTML=soup.prettify()   
+
+    util.writeToFile('./output.html',prettyHTML)
     reparsed = minidom.parseString(roughString)
     util.writeToFile(filepath,reparsed.toprettyxml())
-
-# # init('ImageView',)
-# init('ImageView',[587, 550, 1037, 782],1680,953)
-# init('ImageView',[554, 203, 1052, 494],1680,953)
-
-# build()

@@ -101,7 +101,7 @@ def centerImage(img,n):
 
 
 def preprocess(image_path,n=80,brightness=100,size=(28,28),coords=[-1,-1,-1,-1]):
-    print('Processing: ' + image_path)
+    #print('Processing: ' + image_path)
 
     start_time = time.time()
     img = misc.imread(image_path, mode='L').astype(int)
@@ -118,13 +118,14 @@ def preprocess(image_path,n=80,brightness=100,size=(28,28),coords=[-1,-1,-1,-1])
 
     # Cropping the image 
     img = img[y_min:y_max+1, x_min:x_max+1]
-    print('Cropped image time taken is --- %s seconds ---', (time.time() - start_time))
+    #print('Cropped image time taken is --- %s seconds ---', (time.time() - start_time))
     start_time = time.time()
     rows = img.shape[0]
     columns = img.shape[1]
     # getting square coordinates
     x,y,side = getSquareCoordinates(0,rows,0,columns)
-    print('Square Coordinates time taken is --- %s seconds ---', (time.time() - start_time))
+    
+    #print('Square Coordinates time taken is --- %s seconds ---', (time.time() - start_time))
     start_time = time.time()
     # Doing the required padding for converting image to square
     if (x<0):
@@ -143,21 +144,21 @@ def preprocess(image_path,n=80,brightness=100,size=(28,28),coords=[-1,-1,-1,-1])
         size = y + side - rows
         img = getPadding(img, size, 'Bottom')    
     
-    print('Padding time taken is --- %s seconds ---', (time.time() - start_time))
+    #print('Padding time taken is --- %s seconds ---', (time.time() - start_time))
     start_time = time.time()
 
     # Adding final padding to all sides
     final_img = centerImage(img,n)
-    print('Centering time taken is --- %s seconds ---', (time.time() - start_time))
+    #print('Centering time taken is --- %s seconds ---', (time.time() - start_time))
     start_time = time.time()
     misc.imsave('tmp.png',final_img)
     final_img = Image.open('tmp.png')
-    print('Image Loading time taken is --- %s seconds ---', (time.time() - start_time))
+    #print('Image Loading time taken is --- %s seconds ---', (time.time() - start_time))
     start_time = time.time()
     # cmd_image_visualizer(final_img)
     final_img = brightenImage(final_img,brightness,size=size)
 
-    print('Brightening time taken is --- %s seconds ---', (time.time() - start_time))
+    #print('Brightening time taken is --- %s seconds ---', (time.time() - start_time))
     start_time = time.time()
     return final_img,xz,yz
    

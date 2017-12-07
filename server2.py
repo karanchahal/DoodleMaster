@@ -1,7 +1,9 @@
 from flask_socketio import SocketIO, send, emit
 
 from flask import Flask,render_template,send_from_directory,request
-app = Flask(__name__, static_folder=".././WebInterface/static", template_folder=".././WebInterface")
+app = Flask(__name__, template_folder=".././AAD-WebInterface")
+#static_folder=".././WebInterface/static"
+# app = Flask(__name__, template_folder=".././WebInterface")
 from flask_cors import CORS
 import base64
 import pickle
@@ -9,6 +11,7 @@ from scipy import misc
 from preprocessing import preprocess
 app.config['SECRET_KEY'] = 'mysecret'
 app.config["CACHE_TYPE"] = "null"
+
 socketio = SocketIO(app)
 import layout_gen
 # class_keys = ['TextView','ImageView','Header','EditText','Button']
@@ -44,7 +47,7 @@ def normalizing(X):
     return X/255
 
 
-def load_checkpoint(model,filename='./checkpoint/hsbc-5.pth.tar'):
+def load_checkpoint(model,filename='./checkpoint/hsbc-7.pth.tar'):
     checkpoint = torch.load(filename)
     model.load_state_dict(checkpoint['state_dict'])
     return model
@@ -53,11 +56,22 @@ def load_checkpoint(model,filename='./checkpoint/hsbc-5.pth.tar'):
 class_size = 5
 
 CORS(app)
-@app.route('/static/<path:path>')
-def send_static(path):
-    return send_from_directory('.././WebInterface/static/', path)
+@app.route('/css/<path:path>')
+def send_css(path):
+    return send_from_directory('.././AAD-WebInterface/css/', path)
 
 model = None
+
+@app.route('/js/<path:path>')
+def sendjs(path):
+    print(path[:-4])
+    return send_from_directory('.././AAD-WebInterface/js/', path)
+
+
+@app.route('/imgs/<path:path>')
+def sendImg(path):
+    print(path[:-4])
+    return send_from_directory('.././AAD-WebInterface/imgs/', path)
 
 @socketio.on('getImg')
 def hello_world(payload):
