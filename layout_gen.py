@@ -3,10 +3,28 @@ import util
 from xml.etree import ElementTree as ET
 from xml.dom import minidom
 from bs4 import BeautifulSoup as bs
+import math
+
+
 elements = []
 h = 0
 w = 0
 main_html = '<!DOCTYPE html><html lang="en"><head><title>Output</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="shortcut icon" href="assets/img/favicons/favicon.ico"><script src="assets/js/reload.js"></script><link rel="stylesheet" href="main.css" /></head><body>'
+
+
+def getClean(margin_top):
+    margin_top = math.floor(margin_top)
+    ones = margin_top%10
+
+    if(margin_top >= 10):
+
+        if(ones > 5):
+            margin_top = (margin_top - margin_top%10) +10
+        else:
+            margin_top = (margin_top- margin_top%10)
+    
+    return margin_top
+
 def init(element_type,coords,W,H,id_):
   
     x_min = coords[0]
@@ -19,6 +37,11 @@ def init(element_type,coords,W,H,id_):
 
     h_percent = float((y_max - y_min)/H)*100
     w_percent = float((x_max - x_min)/W)*100
+
+    h_percent = getClean(h_percent)
+    w_percent = getClean(w_percent)
+
+
 
     elements.append([element_type,x_percent,y_percent,w_percent,h_percent,id_])
 
@@ -183,7 +206,11 @@ def build():
         else:
             margin_top = e[2]
 
-        print(margin_top)
+        print('Old', margin_top)
+
+        margin_top  = getClean(margin_top)
+
+        print('New margin',margin_top)
         element_type = e[0]
         x = e[1]
         y = e[2]
