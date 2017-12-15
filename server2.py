@@ -13,7 +13,7 @@ app.config['SECRET_KEY'] = 'mysecret'
 app.config["CACHE_TYPE"] = "null"
 
 socketio = SocketIO(app)
-import layout_gen
+import layout
 # class_keys = ['TextView','ImageView','Header','EditText','Button']
 class_keys = ['Button','EditText','Header','ImageView','TextView']
 import os,time
@@ -116,8 +116,8 @@ def hello_world(payload):
     buildLayout(coords,x,y,preds,id_)
 
 def buildLayout(coords,x,y,label,id_):
-    layout_gen.init(label,coords,x,y,id_)
-    layout_gen.build()
+    layout.init(label,coords,x,y,id_)
+    layout.build()
 
 
 @app.route("/")
@@ -127,7 +127,7 @@ def index():
 
 @socketio.on('clear')
 def handleMessages(payload):
-    layout_gen.elements = []
+    layout.elements = []
 
 
 

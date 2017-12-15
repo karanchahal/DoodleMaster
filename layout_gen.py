@@ -38,10 +38,15 @@ def init(element_type,coords,W,H,id_):
     h_percent = float((y_max - y_min)/H)*100
     w_percent = float((x_max - x_min)/W)*100
 
+    x_percent = getClean(x_percent)
+    y_percent = getClean(y_percent)
     h_percent = getClean(h_percent)
     w_percent = getClean(w_percent)
 
 
+    print('Height', h_percent)
+    print('Width', w_percent)
+    
 
     elements.append([element_type,x_percent,y_percent,w_percent,h_percent,id_])
 
