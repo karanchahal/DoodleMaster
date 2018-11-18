@@ -1,0 +1,306 @@
+
+body {
+    padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+body {
+    padding-top: 56px;
+}
+.btn-warning{
+  background-color: #FFEE58 !important
+
+}
+
+#details{
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+}
+}
+
+.result-box-text, .blinking-cursor, #element-name, .footer-text{
+    font-family: 'Electrolize', sans-serif;
+}
+
+.text-center{
+  font-family: 'Kalam', cursive;
+  font-size: 4vw;
+  margin-top:1vh;
+}
+
+.navbar {
+    min-height:100px;
+    box-shadow: 2px 2px 2px #888888 !important}
+
+#title{
+    color: white;
+}
+
+.col-lg-6{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center !important
+}
+
+#drawingboard-container{
+  height:77vh;
+  width:calc((3/4)*77.5vh);
+  background-image: url('https://prowebdesign.ro/screen-ruler/screeen-ruler.gif');
+}
+
+#drawingboard{
+  margin-top: 2vh;
+  margin-left: calc((3/4)*3vh);
+  height:75vh;
+  width:calc((3/4)*75vh);
+  background-color: black;
+}
+
+/*
+#drawingboard{
+  height:75vh;
+  width:calc((3/4)*75vh);
+  background-color: black;
+}*/
+
+
+
+#circle {
+    width: 4vh;
+    height: 4vh;
+    -webkit-border-radius: 4vh;
+    -moz-border-radius: 4vh;
+    border-radius: 4vh;
+    float: left;
+    text-align: center;
+    font-size: 2.5vh;
+}
+
+
+.row{
+    margin-left:1vh;
+}
+
+#element-name{
+    margin-left: 1vw;
+    font-size: 1.5vw;
+}
+
+#predicted-class{
+    margin-left: 1vw;
+    margin-top: 1.4vh;
+    display: none;
+    font-size: 2em;
+}
+
+#elements{
+height: 60vh;
+width: 30vw;
+overflow-y: auto;
+margin-top: 2vh;
+}
+
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   text-align: center;
+   background-color: #f5f5f5;
+}
+
+.blinking-cursor {
+  font-weight: 400;
+  font-size: 42px;
+  margin-left: 10px;
+  color: #2E3D48;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+.button {
+  padding: 1.8vw 1.8vw;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #000;
+  background-color: #FFEE58;
+  border: none;
+  border-radius: 1vw;;
+  box-shadow: 0 9px #999;
+  justify-content: center;
+  margin-right: 2vw;
+}
+.button:focus {outline:0;}
+
+.button:hover {background-color:yellow}
+
+.button:active {
+  background-color: yellow;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#eraser{
+    background-image: url("../imgs/eraser.svg");
+    background-size: contain;
+}
+
+#AspectRatio{
+    background-image: url("../imgs/orientaion.png");
+    background-size: contain;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+/*.button {
+    background-size: cover;
+    background-color: #999;
+    background-image: -webkit-linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,0%,.1));
+    background-image:    -moz-linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,0%,.1));
+    background-image:     -ms-linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,0%,.1));
+    background-image:      -o-linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,0%,.1));
+    background-image:         linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,0%,.1));
+    background-image: url('../../imgs/eraser.png');
+    border: none;
+    border-radius: .5em;
+    box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.2),
+                inset 0 2px 0 hsla(0,0%,100%,.1),
+                inset 0 1.2em 0 hsla(0,0%,100%,0.1),
+                inset 0 -.2em 0 hsla(0,0%,100%,.1),
+                inset 0 -.25em 0 hsla(0,0%,0%,.25),
+                0 .25em .25em hsla(0,0%,0%,.05);
+    color: #444;
+    cursor: pointer;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 0 .5em 1em;
+    padding: .5em 1.5em .75em;
+    position: relative;
+    text-decoration: none;
+    text-shadow: 0 1px 1px hsla(0,0%,100%,.25);
+    vertical-align: middle;
+}
+.button:hover {
+    outline: none;
+}
+.button:hover,
+.button:focus {
+    box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.2),
+                inset 0 2px 0 hsla(0,0%,100%,.1),
+                inset 0 1.2em 0 hsla(0,0%,100%,.1),
+                inset 0 -.2em 0 hsla(0,0%,100%,.1),
+                inset 0 -.25em 0 hsla(0,0%,0%,.25),
+                inset 0 0 0 3em hsla(0,0%,100%,.2),
+                0 .25em .25em hsla(0,0%,0%,.05);
+}
+.button:active {
+    box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.2),
+                inset 0 2px 0 hsla(0,0%,100%,.1),
+                inset 0 1.2em 0 hsla(0,0%,100%,.1),
+                inset 0 0 0 3em hsla(0,0%,100%,.2),
+                inset 0 .25em .5em hsla(0,0%,0%,.05),
+                0 -1px 1px hsla(0,0%,0%,.1),
+                0 1px 1px hsla(0,0%,100%,.25);
+    margin-top: .25em;
+    outline: none;
+    padding-bottom: .5em;
+}
+
+.medium {
+    font-size: 2em;
+}
+
+.regular {
+    border-radius: .5em;
+}
+
+.red {
+    background-color: #E12523;
+}
+
+.lightText {
+    box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.25),
+                inset 0 2px 0 hsla(0,0%,100%,.1),
+                inset 0 1.2em 0 hsla(0,0%,100%,.05),
+                inset 0 -.2em 0 hsla(0,0%,100%,.1),
+                inset 0 -.25em 0 hsla(0,0%,0%,.5),
+                0 .25em .25em hsla(0,0%,0%,.1);
+    color: #fff;
+    text-shadow: 0 -1px 1px hsla(0,0%,0%,.25);
+}
+.lightText:hover,
+.lightText:focus {
+    box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.25),
+                inset 0 2px 0 hsla(0,0%,100%,.1),
+                inset 0 1.2em 0 hsla(0,0%,100%,.05),
+                inset 0 -.2em 0 hsla(0,0%,100%,.1),
+                inset 0 -.25em 0 hsla(0,0%,0%,.5),
+                inset 0 0 0 3em hsla(0,0%,100%,.2),
+                0 .25em .25em hsla(0,0%,0%,.1);
+}
+.lightText:active {
+    box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.25),
+                inset 0 2px 0 hsla(0,0%,100%,.1),
+                inset 0 1.2em 0 hsla(0,0%,100%,.05),
+                inset 0 0 0 3em hsla(0,0%,100%,.2),
+                inset 0 .25em .5em hsla(0,0%,0%,.05),
+                0 -1px 1px hsla(0,0%,0%,.1),
+                0 1px 1px hsla(0,0%,100%,.25);
+}*/
