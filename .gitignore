@@ -6,3 +6,5 @@
 __pycache__/
 *.html
 /output/output.html
+.DS_Store
+/*/.DS_Store
