@@ -6,7 +6,7 @@ from math import floor
 from util import cmd_image_visualizer, brightenImage
 import re
 import time
-from hello import get_crop_area
+# from hello import get_crop_area
 
 curr_dir = os.getcwd()
 
@@ -106,7 +106,7 @@ def preprocess(image_path,n=80,brightness=100,size=(28,28),coords=[-1,-1,-1,-1])
     start_time = time.time()
     img = misc.imread(image_path, mode='L').astype(int)
     yz,xz = img.shape
-    y_min,y_max,x_min,x_max = get_crop_area(img)
+    y_min,y_max,x_min,x_max = get_crop_area2(img)
    
     if(coords[0] != -1):
             x_min = coords[0]

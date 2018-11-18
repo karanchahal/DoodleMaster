@@ -9,8 +9,8 @@ body {
 }
 
 .logo{
-  margin: auto;  /* Magic! */
-  margin-top:6px;
+  /*margin: auto;  /* Magic! */
+  /*margin-top:6px;*/
   height: 3vh;
   width: 180px;
 }

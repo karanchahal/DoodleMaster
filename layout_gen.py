@@ -147,7 +147,7 @@ def EditTextXml(i,margin_top,x,y,w,h,id):
     return EditText_Layout
 
 def Header(i,margin_top,x,y,w,h,id):
-    html = '<div class="header"> <div class="logo"><img src="assets/img/hsbc-logo.svg"></div> </div> <div class="heading"> <div class="page-type"> HEADER </div> </div> <div class="loadingbar"></div> <div class="container">'
+    html = '<div class="heading"> <div class="page-type"> HEADER </div> </div> <div class="loadingbar"></div> <div class="container">'
     return html
 
 
