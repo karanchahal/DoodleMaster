@@ -4,3 +4,5 @@
 *.jpg
 *.p
 __pycache__/
+*.html
+/output/output.html

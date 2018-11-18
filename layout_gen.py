@@ -260,7 +260,7 @@ def build():
     soup=bs(htmlfinal)                
     prettyHTML=soup.prettify()   
 
-    util.writeToFile('./output.html',prettyHTML)
+    util.writeToFile('./output/output.html',prettyHTML)
     reparsed = minidom.parseString(roughString)
     # Commented out for Android XML code
     #util.writeToFile(filepath,reparsed.toprettyxml())
