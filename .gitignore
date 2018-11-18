@@ -8,3 +8,4 @@ __pycache__/
 /output/output.html
 .DS_Store
 /*/.DS_Store
+!/classes/*.png
