@@ -37,4 +37,4 @@ This project uses Python3.
 
 ##### Note
 
-This is not a prodution worthy piece of software, it is only meant for demo purposes. Please don't hesistate to contact me for more details on this project.
+This is not a prodution worthy piece of software, it is only meant for demo purposes. Please don't hesistate to contact me for more details on this project. This project sparked an interesting discussion on HackerNews on the advantages and disadvantages of "Codeless UI", one can read more about in this [thread](https://news.ycombinator.com/item?id=18480115) 
