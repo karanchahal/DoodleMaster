@@ -14,8 +14,6 @@ def cmd_image_visualizer(x):
             print(str(x[i][j]) + "\t" ,end='')
         print('',end='\n')
 
-
-
 def displayImage(x):
     height = x.shape[0]
     width = x.shape[1]
@@ -56,26 +54,6 @@ def appendToFile(filepath):
 
 def appendElementToXML(filepath, label,root,xml =None):
     ET.register_namespace('android',"http://schemas.android.com/apk/res/android")
-    #file = open(filepath, 'a')
-    #doc = ET.parse(filepath)
-   
-
-    # Create 2 new elements
-    # textView = ET.Element("TextView", {"android:layout_width": "match_parent",
-    #                         "android:layout_height": "wrap_content",
-    #                         "android:text": "Welcome To",
-    #                         "android:textSize":"25sp",
-    #                         "android:gravity":"center_horizontal",
-    #                         "android:textColor":"@color/textColor",
-    #                         "android:id":"@+id/hsbc_tv"})
-    
-    # imageView = ET.Element("ImageView", {"android:layout_width": "match_parent",
-    #                         "android:layout_height": "100dp",
-    #                         "android:src": "@drawable/HSBC_logo",
-    #                         "android:layout_gravity":"center",
-    #                         "android:id":"@+id/hsbc_logo"})
-
-
 
     ImageView_Layout = ET.Element("LinearLayout", {"android:layout_width": "match_parent",
                                 "android:layout_height": "wrap_content",

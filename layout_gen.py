@@ -262,4 +262,5 @@ def build():
 
     util.writeToFile('./output.html',prettyHTML)
     reparsed = minidom.parseString(roughString)
-    util.writeToFile(filepath,reparsed.toprettyxml())
+    # Commented out for Android XML code
+    #util.writeToFile(filepath,reparsed.toprettyxml())
