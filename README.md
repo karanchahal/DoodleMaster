@@ -9,7 +9,7 @@ The demo supports the detection of 4 classes of UI components
 3. ImageViews
 4. Buttons
 
-One can view the different doodles that this software supports for classification in the classes directory. note that the classifier is slightly overfit towards the text view, training again with greater regularisation can help solve this problem.
+One can view the different doodles that this software supports for classification in the ```classes``` directory. Note that the classifier is slightly overfit towards the text view, training again with greater regularization can help solve this problem.
 
 This type of tool can be useful in a big organisation which adheres to a consistent design guide and has several reusable components on variety of platforms such as mobile and the web. For example a button on the Airbnb website follows the same styling across all platforms. This tool can simultaneously generate the same UI for Android and the Web.
 
