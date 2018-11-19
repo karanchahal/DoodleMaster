@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>AI Assisted Design</title>
+
+    <link rel="stylesheet" href="/css/myStyle.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+   
+    <link href="https://fonts.googleapis.com/css?family=Electrolize|Kalam:700" rel="stylesheet">
+   
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light fixed-top">
+      <div class="container-fluid" style="width: 100%;">
+        <div class="row" style="width: 100%;">
+          <div class="col-md-2" style="margin-top: 1.8vw;">
+            
+          </div>
+          <div class="col-md-8">
+            <h1 class="text-center">Doodle Master</h1>
+          </div>
+          <div class="col-md-2" style="margin-top: 1.5vh;">
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li>
+                  <button class="button" id="AspectRatio" onclick="changeAspectRatio()"></button>
+                </li>
+                <li>
+                  <button class="button" id="eraser" onclick="reset()"></button>
+                </li>
+             </ul>
+           </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- main body -->
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6" style="padding-top: 4vh;">
+          <div id="drawingboard-container">
+          <div id="drawingboard"></div></div>
+        </div>
+        <div class="col-lg-6" id="details" style="display: flex; flex-direction: column;">
+          <div class="container" style="display: flex; flex-direction: row; width: 100%;">
+            <h2 class="result-box-text" style="margin-top: 12px;">Predicted View : </h2>
+                <span class="blinking-cursor" id="blinking-cursor">|</span>
+                <!-- change text of predicted-class with the actual result and hide the span using js-->
+                <h4 class="result-box-text" id="predicted-class"></h4>
+          </div>
+          <div class="container">
+            <div id="elements"></div>
+          </div>
+
+        </div>
+    </div>
+</div>
+
+    <div class="footer">
+      <p class="footer-text" style="margin-top: 2vh; font-size: 1vw;">-- © Copyright - 2017. DoodleMasters --</p>
+    </div>
+
+    <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel" >Create new view</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="ID-name" class="col-form-label">Element ID:</label>
+                                    <input type="text" class="form-control" id="element-id">
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-warning" onclick="savedMyID()">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <script src="/js/jquery.js"></script>
+    <script src="/js/popper.js" ></script>
+    <script src="/js/bootstrap.js"></script>
+    
+    <script src="/js/socket.js"></script>
+    <script src="/js/drawingboard.js"></script>
+    <script src="/js/myAction.js"></script>  
+     <!--Bootstrap core JavaScript 
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/popper.js" ></script>
+    <script src="/static/js/bootstrap.js"></script>
+    <script src="/static/js/socket.js"></script>
+    <script src="/static/js/drawingboard.js"></script>
+    <script type="text/javascript" src="/static/js/myAction.js"></script>-->
+    <script>
+    
+    </script>
+  </body>
+
+</html>
