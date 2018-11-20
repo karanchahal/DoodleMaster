@@ -19,13 +19,13 @@ This type of tool can be useful in a big organisation which adheres to a consist
 
 ## Technologies
 
-This demo uses a simple CNN for the classification of the doodles made. The software is able to localise the UI element through a combintion of geometric techniques and simple mouse/ finger position detection. Frameworks used are:
+This demo uses a simple CNN for the classification of the doodles made. The software is able to localise the UI element through a combination of geometric techniques and simple mouse/finger position detection. Frameworks used are:
 
 1. Deep Learning Model = Pytorch
 2. UI = HTML/CSS
 
 
-This demo was inspired by Airbnb's work on Sketching Interfaces. This demo was made while I was a frontend developer. I was inspired to make this as I saw a lot of developers spending time on coding the UI from the mockups, this time could be better spent in coding the functionality behing the UI. Doodle master  seeks to build a painless and natural way of prototyping interfaces. This tool can be used by designers and developers alike to showcase ideas quickly in the form of real code.
+This demo was inspired by Airbnb's work on Sketching Interfaces. This demo was made while I was a frontend developer. I was inspired to make this as I saw a lot of developers spending time on coding the UI from the mockups, this time could be better spent in coding the functionality behind the UI. Doodle master  seeks to build a painless and natural way of prototyping interfaces. This tool can be used by designers and developers alike to showcase ideas quickly in the form of real code.
 
 #### Instructions for Building and Running
 
