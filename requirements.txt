@@ -45,7 +45,7 @@ scipy == 0.19.1
 # server.py: 13,14,15,16,17,24
 # utils.py: 1
 # yolo_classifier.py: 1,2,3,4
-torch == 0.4.0
+torch
 
 # server.py: 20
-torchvision == 0.2.1
+torchvision 
