@@ -27,8 +27,8 @@ h5py == 2.7.1
 # server.py: 12
 imageio == 2.2.0
 
-# server.py: 21
-matplotlib == 2.0.2
+
+
 
 # preprocessing.py: 1
 # server.py: 10,18
