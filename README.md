@@ -32,7 +32,12 @@ This demo was inspired by Airbnb's work on Sketching Interfaces. This demo was m
 This project uses Python3.
 
 1. Download the weights from [here](https://drive.google.com/open?id=1dgz1DbeXFxGYc-KmKE4RcFdmf793-lK-) and create a folder ```weights``` in the root of the repo, paste the file inside this ```weights``` folder.
-2. Build the project with the command: ```pip3 install -r requirements.txt```
+2. Build the project with these commands:
+```
+conda create -n doodle python=3.6
+conda activate doodle
+sh ./setup.sh
+```
 3. Start the server with the command : ```python3 server.py```
 4. Goto ```localhost:5000``` to view the Doodle Master.
 5. Output HTML file is generated at the ```output``` folder
