@@ -3,6 +3,7 @@ from flask import Flask,render_template,send_from_directory,request
 from flask_cors import CORS
 import base64
 import pickle
+from PIL import Image
 from scipy import misc
 from preprocessing import preprocess
 import layout_gen
@@ -24,6 +25,7 @@ import torch.nn.functional as F
 from classifier import YoloClassifier
 import utils
 import shutil
+import numpy 
 
 app = Flask(__name__, template_folder="frontend")
 class_keys = ['Button','EditText','Header','ImageView','TextView']
@@ -76,9 +78,10 @@ def hello_world(payload):
    fh = open("imageToSave.png", "wb")
    fh.write(base64.urlsafe_b64decode(doodle))
    fh.close()
-   noo = misc.imread('imageToSave.png',mode='L').astype(int)
+   #noo = numpy.array(Image.open('imageToSave.png',mode='r')).astype(int)
+   #print(noo.shape)
    img,x,y = preprocess('./imageToSave.png',n=30,brightness=120,coords=coords)
-   img = misc.imread('tmp.png').astype('float32')
+   img = imageio.imread('tmp.png').astype('float32')
    img = np.stack((img,)*3)
    img = torch.Tensor(normalizing(img))
    img = img.view(1,3,256,256)

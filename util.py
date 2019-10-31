@@ -4,6 +4,7 @@ from scipy import misc
 from xml.etree import ElementTree as ET
 from xml.dom import minidom
 import bcolz
+import imageio
 
 # function to view np array in cmd
 def cmd_image_visualizer(x):
@@ -26,7 +27,7 @@ def brightenImage(img,brightness,size):
     img = img.point(lambda x : 0 if x< 28 else (255 if x+brightness>255 else x+brightness))
     
     img.save(filename)
-    img = misc.imread(filename,mode='L').astype(int)
+    img = imageio.imread(filename,pilmode='L').astype(int)
 
     return img
 

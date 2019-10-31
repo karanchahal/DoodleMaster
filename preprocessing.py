@@ -6,6 +6,7 @@ from math import floor
 from util import cmd_image_visualizer, brightenImage
 import re
 import time
+import imageio
 # from hello import get_crop_area
 
 curr_dir = os.getcwd()
@@ -104,7 +105,7 @@ def preprocess(image_path,n=80,brightness=100,size=(28,28),coords=[-1,-1,-1,-1])
     #print('Processing: ' + image_path)
 
     start_time = time.time()
-    img = misc.imread(image_path, mode='L').astype(int)
+    img = imageio.imread(image_path, pilmode='L').astype(int)
     yz,xz = img.shape
     y_min,y_max,x_min,x_max = get_crop_area2(img)
    
@@ -151,7 +152,7 @@ def preprocess(image_path,n=80,brightness=100,size=(28,28),coords=[-1,-1,-1,-1])
     final_img = centerImage(img,n)
     #print('Centering time taken is --- %s seconds ---', (time.time() - start_time))
     start_time = time.time()
-    misc.imsave('tmp.png',final_img)
+    imageio.imwrite('tmp.png',final_img)
     final_img = Image.open('tmp.png')
     #print('Image Loading time taken is --- %s seconds ---', (time.time() - start_time))
     start_time = time.time()
